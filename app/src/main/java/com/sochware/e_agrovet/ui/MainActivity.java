@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sochware.e_agrovet.R;
+import com.sochware.e_agrovet.ui.contact.ContactFragment;
 import com.sochware.e_agrovet.ui.home.HomeFragment;
 import com.sochware.e_agrovet.ui.story.StoryFragment;
 
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             openFragment(new HomeFragment(), "Home");
         } else if (id == R.id.nav_story) {
-            openFragment(new StoryFragment(), "Story");
+            openFragment(new ContactFragment(), "Story");
         }
 
         drawer.closeDrawer(GravityCompat.START);
