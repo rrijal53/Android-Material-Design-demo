@@ -52,9 +52,17 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         List<Slider> list = new ArrayList<>();
-        list.add(new Slider("1", "Test", "https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg"));
-        list.add(new Slider("1", "Test", "http://www.dolcevitatravelmagazine.com/wp-content/uploads/2014/10/Cook-Islands-Background.jpg"));
-        list.add(new Slider("1", "Test", "https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg"));
+        String url="http://52.224.13.239/agrovet/img/";
+
+        for (int in=4;in>=1;in--)
+        {
+            String final_url=url+"banner"+in+".jpg";
+            list.add(new Slider("1","Test1",final_url));
+
+        }
+//        list.add(new Slider("1", "Test", "https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg"));
+//        list.add(new Slider("1", "Test", "http://www.dolcevitatravelmagazine.com/wp-content/uploads/2014/10/Cook-Islands-Background.jpg"));
+//        list.add(new Slider("1", "Test", "https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg"));
         setUpSlider(list);
         setUpRecyclerView();
 
@@ -63,11 +71,12 @@ public class HomeFragment extends Fragment {
     private void setUpRecyclerView() {
         rvHome.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         List<HomeItem> list = new ArrayList<>();
-        list.add(new HomeItem(getString(R.string.t1), R.mipmap.ic_launcher));
-        list.add(new HomeItem("Timeline2", R.mipmap.ic_launcher));
-        list.add(new HomeItem("Timeline3", R.mipmap.ic_launcher));
-        list.add(new HomeItem("Timeline4", R.mipmap.ic_launcher));
-        list.add(new HomeItem("Timeline5", R.mipmap.ic_launcher));
+        list.add(new HomeItem(getString(R.string.cam), R.mipmap.ic_launcher));
+        list.add(new HomeItem(getString(R.string.history), R.mipmap.ic_launcher));
+        list.add(new HomeItem(getString(R.string.geo), R.mipmap.ic_launcher));
+        list.add(new HomeItem(getString(R.string.contact), R.mipmap.ic_launcher));
+        list.add(new HomeItem(getString(R.string.help), R.mipmap.ic_launcher));
+        list.add(new HomeItem(getString(R.string.query), R.mipmap.ic_launcher));
         rvHome.setAdapter(new AdapterHome(getActivity(), list));
     }
 
