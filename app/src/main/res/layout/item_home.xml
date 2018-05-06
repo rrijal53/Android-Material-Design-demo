@@ -6,6 +6,7 @@
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true"
     app:contentPadding="4dp"
+    app:cardCornerRadius="0dp"
     android:foreground="?attr/selectableItemBackground"
     android:background="?attr/selectableItemBackground"
     android:orientation="vertical">
