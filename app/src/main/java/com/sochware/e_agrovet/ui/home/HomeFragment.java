@@ -71,10 +71,10 @@ public class HomeFragment extends Fragment {
     private void setUpRecyclerView() {
         rvHome.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         List<HomeItem> list = new ArrayList<>();
-        list.add(new HomeItem(getString(R.string.cam), R.mipmap.ic_launcher));
-        list.add(new HomeItem(getString(R.string.history), R.mipmap.ic_launcher));
-        list.add(new HomeItem(getString(R.string.geo), R.mipmap.ic_launcher));
-        list.add(new HomeItem(getString(R.string.contact), R.mipmap.ic_launcher));
+        list.add(new HomeItem(getString(R.string.cam), R.mipmap.scan_leaf_round));
+        list.add(new HomeItem(getString(R.string.history), R.mipmap.history));
+        list.add(new HomeItem(getString(R.string.geo), R.mipmap.location_foreground));
+        list.add(new HomeItem(getString(R.string.contact), R.mipmap.contact_round));
         list.add(new HomeItem(getString(R.string.help), R.mipmap.ic_launcher));
         list.add(new HomeItem(getString(R.string.query), R.mipmap.ic_launcher));
         rvHome.setAdapter(new AdapterHome(getActivity(), list));

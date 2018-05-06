@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             openFragment(new HomeFragment(), "Home");
         } else if (id == R.id.nav_story) {
-            openFragment(new ContactFragment(), "Story");
+            openFragment(new ContactFragment(), "Contact");
         }
 
         drawer.closeDrawer(GravityCompat.START);
