@@ -15,5 +15,6 @@
     <string name="contact">Contacts</string>
     <string name="help">Help</string>
     <string name="query">Query</string>
+    <string name="change_language">Change Language</string>
 
 </resources>

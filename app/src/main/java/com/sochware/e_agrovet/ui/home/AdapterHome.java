@@ -1,18 +1,25 @@
 package com.sochware.e_agrovet.ui.home;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sochware.e_agrovet.R;
+import com.sochware.e_agrovet.pojo.Contacts;
 import com.sochware.e_agrovet.pojo.HomeItem;
+import com.sochware.e_agrovet.ui.contact.ContactFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -49,8 +56,15 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 //                ((ViewHolderHome) holder).image.setImageResource(R.mipmap.ic_launcher);
 //            }
 
-            holder.itemView.setOnClickListener(v ->{
+            holder.itemView.setOnClickListener((View v) ->{
                 Log.d("Clicke", "onBindViewHolder: ");
+
+                switch (position)
+                {
+                    case 0:
+                        //openFragment(new HomeFragment(), "Home");
+                        //Toast.makeText(holder.getContext(), "Click!", Toast.LENGTH_SHORT).show();
+                }
             });
         }
 
@@ -73,4 +87,5 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             ButterKnife.bind(this, itemView);
         }
     }
+
 }

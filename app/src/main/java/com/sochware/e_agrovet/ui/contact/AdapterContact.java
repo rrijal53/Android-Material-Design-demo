@@ -3,6 +3,7 @@ package com.sochware.e_agrovet.ui.contact;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -50,6 +51,12 @@ public class AdapterContact extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 context.startActivity(inn);
 
             });
+            ((ViewHolderContact) holder).map.setOnClickListener(v -> {
+                //String text=list.get(position).getName();
+                //TextToSpeech txt=new TextToSpeech(R.)
+
+            });
+
         }
     }
 
