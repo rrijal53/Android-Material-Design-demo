@@ -1,5 +1,6 @@
 package com.sochware.e_agrovet.ui;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,8 @@ import com.sochware.e_agrovet.ui.contact.ContactFragment;
 import com.sochware.e_agrovet.ui.home.AdapterHome;
 import com.sochware.e_agrovet.ui.home.HomeFragment;
 import com.sochware.e_agrovet.ui.story.StoryFragment;
+
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,6 +52,13 @@ public class MainActivity extends AppCompatActivity
 
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        Locale locale = new Locale("ne");
+        Locale.setDefault(locale);
+        Configuration config = getBaseContext().getResources().getConfiguration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
 
         navigationView.setNavigationItemSelectedListener(this);
         openFragment(new HomeFragment(), "Home");

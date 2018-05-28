@@ -37,6 +37,7 @@ public class Utilities {
         }
     }
 
+
     public static boolean isNetworkConnected(Context ctx) {
         ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
