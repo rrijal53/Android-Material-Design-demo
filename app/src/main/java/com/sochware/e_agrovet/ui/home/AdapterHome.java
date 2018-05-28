@@ -63,9 +63,9 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 //                ((ViewHolderHome) holder).image.setImageResource(R.mipmap.ic_launcher);
 //            }
             holder.itemView.setOnClickListener( v ->{
-                if (list.get(position).getName().equalsIgnoreCase("contact")){
+                if (list.get(position).getName().equalsIgnoreCase("contacts")){
                     Utilities.toast(context, "Item clicked" + position);
-                    listener.openFragment(new ContactFragment(), "Contact");
+                    listener.openFragment(new ContactFragment(), "Contacts");
                 }
             });
 

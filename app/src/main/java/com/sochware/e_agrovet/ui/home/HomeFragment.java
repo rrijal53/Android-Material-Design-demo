@@ -76,6 +76,7 @@ public class HomeFragment extends Fragment {
         list.add(new HomeItem(getString(R.string.contact), R.drawable.ic_contact_menu));
         list.add(new HomeItem(getString(R.string.help), R.drawable.ic_help_icon));
         list.add(new HomeItem(getString(R.string.query), R.drawable.ic_query_green));
+        rvHome.setNestedScrollingEnabled(false);
         rvHome.setAdapter(new AdapterHome(getActivity(), list));
     }
 
@@ -86,7 +87,7 @@ public class HomeFragment extends Fragment {
             textSliderView
                     .description(slide.getName())
                     .image(slide.getImage_url())
-                    .setScaleType(BaseSliderView.ScaleType.CenterCrop)
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
                     .setOnSliderClickListener(slider -> {
 
                     });
