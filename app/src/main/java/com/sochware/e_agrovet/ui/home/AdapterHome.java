@@ -1,9 +1,9 @@
 package com.sochware.e_agrovet.ui.home;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sochware.e_agrovet.R;
+import com.sochware.e_agrovet.Utilities;
 import com.sochware.e_agrovet.pojo.Contacts;
 import com.sochware.e_agrovet.pojo.HomeItem;
 import com.sochware.e_agrovet.ui.contact.ContactFragment;
@@ -31,9 +32,15 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context context;
     private List<HomeItem> list;
-
+    private OnClickHomeItem listener;
+    public interface OnClickHomeItem{
+        void openFragment(Fragment f, String s );
+    }
     public AdapterHome(Context context, List<HomeItem> list) {
         this.context = context;
+        if (context instanceof OnClickHomeItem){
+            listener = (OnClickHomeItem) context;
+        }
         this.list = list;
     }
 
@@ -55,17 +62,13 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 //            } else {
 //                ((ViewHolderHome) holder).image.setImageResource(R.mipmap.ic_launcher);
 //            }
-
-            holder.itemView.setOnClickListener((View v) ->{
-                Log.d("Clicke", "onBindViewHolder: ");
-
-                switch (position)
-                {
-                    case 0:
-                        //openFragment(new HomeFragment(), "Home");
-                        //Toast.makeText(holder.getContext(), "Click!", Toast.LENGTH_SHORT).show();
+            holder.itemView.setOnClickListener( v ->{
+                if (list.get(position).getName().equalsIgnoreCase("contact")){
+                    Utilities.toast(context, "Item clicked" + position);
+                    listener.openFragment(new ContactFragment(), "Contact");
                 }
             });
+
         }
 
     }

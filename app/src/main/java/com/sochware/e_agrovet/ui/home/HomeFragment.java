@@ -54,8 +54,7 @@ public class HomeFragment extends Fragment {
         List<Slider> list = new ArrayList<>();
         String url="http://52.224.13.239/agrovet/img/";
 
-        for (int in=4;in>=1;in--)
-        {
+        for (int in=4;in>=1;in--) {
             String final_url=url+"banner"+in+".jpg";
             list.add(new Slider("1","Test1",final_url));
 

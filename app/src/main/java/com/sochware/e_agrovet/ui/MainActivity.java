@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.sochware.e_agrovet.R;
 import com.sochware.e_agrovet.ui.contact.ContactFragment;
+import com.sochware.e_agrovet.ui.home.AdapterHome;
 import com.sochware.e_agrovet.ui.home.HomeFragment;
 import com.sochware.e_agrovet.ui.story.StoryFragment;
 
@@ -24,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener , AdapterHome.OnClickHomeItem{
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity
         openFragment(new HomeFragment(), "Home");
     }
 
-    private void openFragment(Fragment f, String s) {
+    @Override
+    public void openFragment(Fragment f, String s) {
         isHomeFragment = f instanceof HomeFragment;
         getSupportFragmentManager().beginTransaction().replace(R.id.content_main, f).commit();
         setTitle(s);
