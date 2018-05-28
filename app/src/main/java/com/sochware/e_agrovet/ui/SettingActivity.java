@@ -38,10 +38,10 @@ public class SettingActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref);
 
-            ListPreference f = (ListPreference) findPreference("language");
+            ListPreference f = (ListPreference) findPreference("pref_language");
             f.setOnPreferenceChangeListener((preference, o) -> {
                 // TODO: 5/28/18 Change language here....... if o.toString() == English bho bhane change language to english other wise nepali
-                return false;
+                return true;
             });
         }
     }

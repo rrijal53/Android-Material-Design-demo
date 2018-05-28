@@ -1,5 +1,6 @@
 package com.sochware.e_agrovet.ui;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -103,6 +104,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.action_settings) {
             return true;
+        }else if(id == R.id.action_lang){
+            startActivity(new Intent(this, SettingActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
