@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sochware.e_agrovet.R;
+import com.sochware.e_agrovet.Utilities;
 import com.sochware.e_agrovet.pojo.Contacts;
 
 import java.util.List;
@@ -54,7 +55,7 @@ public class AdapterContact extends RecyclerView.Adapter<RecyclerView.ViewHolder
             ((ViewHolderContact) holder).map.setOnClickListener(v -> {
                 //String text=list.get(position).getName();
                 //TextToSpeech txt=new TextToSpeech(R.)
-
+                Utilities.openInMap(context, list.get(position).getLongitude(), list.get(position).getLatitude(), list.get(position).getName());
             });
 
         }
