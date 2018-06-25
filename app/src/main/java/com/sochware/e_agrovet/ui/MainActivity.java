@@ -1,6 +1,7 @@
 package com.sochware.e_agrovet.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -29,7 +30,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener , AdapterHome.OnClickHomeItem{
+        implements NavigationView.OnNavigationItemSelectedListener, AdapterHome.OnClickHomeItem {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -54,16 +55,23 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        Locale locale = new Locale("ne");
-        Locale.setDefault(locale);
-        Configuration config = getBaseContext().getResources().getConfiguration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,
-                getBaseContext().getResources().getDisplayMetrics());
+        SharedPreferences pf = getSharedPreferences("pref_language", MODE_PRIVATE);
+        String lang = pf.getString("pref_language", "");
+        if (lang != null) {
 
+            Locale locale = new Locale(lang.equalsIgnoreCase("Nepali") ? "ne" : "en");
+            Locale.setDefault(locale);
+            Configuration config = getBaseContext().getResources().getConfiguration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+
+        }
         navigationView.setNavigationItemSelectedListener(this);
+
         openFragment(new HomeFragment(), "Home");
     }
+
 
     @Override
     public void openFragment(Fragment f, String s) {
@@ -75,9 +83,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void finish() {
-        if (isHomeFragment){
+        if (isHomeFragment) {
             super.finish();
-        }else{
+        } else {
             openFragment(new HomeFragment(), "Home");
         }
     }
@@ -104,7 +112,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.action_settings) {
             return true;
-        }else if(id == R.id.action_lang){
+        } else if (id == R.id.action_lang) {
             startActivity(new Intent(this, SettingActivity.class));
         }
 

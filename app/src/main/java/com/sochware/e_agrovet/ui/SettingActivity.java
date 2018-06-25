@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 
 import com.sochware.e_agrovet.R;
 
+import java.util.Locale;
+
 public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +43,8 @@ public class SettingActivity extends AppCompatActivity {
 
             ListPreference f = (ListPreference) findPreference("pref_language");
             f.setOnPreferenceChangeListener((preference, o) -> {
+
+
                 // TODO: 5/28/18 Change language here....... if o.toString() == English bho bhane change language to english other wise nepali
                 return true;
             });
