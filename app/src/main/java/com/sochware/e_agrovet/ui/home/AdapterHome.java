@@ -2,6 +2,7 @@ package com.sochware.e_agrovet.ui.home;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sochware.e_agrovet.CameraActivity;
 import com.sochware.e_agrovet.R;
 import com.sochware.e_agrovet.Utilities;
 import com.sochware.e_agrovet.pojo.Contacts;
@@ -66,6 +68,8 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 if (list.get(position).getName().equalsIgnoreCase("contacts")){
                     Utilities.toast(context, "Item clicked" + position);
                     listener.openFragment(new ContactFragment(), "Contacts");
+                }else if (list.get(position).getName().equalsIgnoreCase("Scan Leaf")){
+                    context.startActivity(new Intent(context, CameraActivity.class));
                 }
             });
 

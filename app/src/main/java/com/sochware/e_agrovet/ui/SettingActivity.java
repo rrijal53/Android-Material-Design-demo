@@ -21,6 +21,7 @@ public class SettingActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingFragment()).commit();
+
     }
 
 
