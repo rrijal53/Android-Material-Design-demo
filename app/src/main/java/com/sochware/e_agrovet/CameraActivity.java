@@ -2,6 +2,7 @@ package com.sochware.e_agrovet;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -14,6 +15,7 @@ import android.widget.Button;
 
 import com.esafirm.imagepicker.features.ImagePicker;
 import com.esafirm.imagepicker.model.Image;
+import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.util.List;
 
@@ -89,11 +91,25 @@ public class CameraActivity extends AppCompatActivity {
 
             } else if (requestCode == 101) {
                 Uri uri = data.getData();
+                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                startActivity(intent);
                 // TODO: 6/25/18 USE IMAGE FROM CAMERA
 
             }
         }
 
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void ImageCropFunction()
+    {
+        try
+        {
+
+        }
+        catch (ActivityNotFoundException e)
+        {
+
+        }
     }
 }

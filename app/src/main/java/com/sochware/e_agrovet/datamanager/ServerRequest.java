@@ -41,7 +41,7 @@ public class ServerRequest {
                 RequestBody.create(
                         okhttp3.MultipartBody.FORM, name);
 
-        Call<ResponseBody> call = apiService.postImage(body, n);
+        Call<ResponseBody> call = apiService.postImage(body);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

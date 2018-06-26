@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "810829208360",
+    "firebase_url": "https://eagrovet-sochware.firebaseio.com",
+    "project_id": "eagrovet-sochware",
+    "storage_bucket": "eagrovet-sochware.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810829208360:android:93a3db173a394cda",
+        "android_client_info": {
+          "package_name": "com.sochware.e_agrovet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810829208360-sm5l4uq694fut3fp0bm2mlqrr2l0ed76.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sochware.e_agrovet",
+            "certificate_hash": "68718c7da1479b31cd7205ef4a84d3adda92bd13"
+          }
+        },
+        {
+          "client_id": "810829208360-9tdet5g05jetj6mvoah9euk3qivhl77j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5S5uSZLUJgw3PnBfD36H1nElwSLKIPzQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810829208360-9tdet5g05jetj6mvoah9euk3qivhl77j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
