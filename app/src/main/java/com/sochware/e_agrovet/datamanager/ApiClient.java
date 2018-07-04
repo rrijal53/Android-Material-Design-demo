@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    public static final String BASE_URL = "http://52.224.13.239/agrovet/";
+    public static final String BASE_URL = "http://sochware.in/agrovet/";
     private static Retrofit retrofit = null;
 
 

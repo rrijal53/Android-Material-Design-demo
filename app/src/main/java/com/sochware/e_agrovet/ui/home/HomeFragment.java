@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         List<Slider> list = new ArrayList<>();
-        String url="http://52.224.13.239/agrovet/img/";
+        String url="http://sochware.in/agrovet/img/";
 
         for (int in=4;in>=1;in--) {
             String final_url=url+"banner"+in+".jpg";

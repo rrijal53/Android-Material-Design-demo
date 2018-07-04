@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.sochware.e_agrovet.LoginActivity;
 import com.sochware.e_agrovet.R;
 import com.sochware.e_agrovet.ui.contact.ContactFragment;
 import com.sochware.e_agrovet.ui.home.AdapterHome;
@@ -128,6 +129,10 @@ public class MainActivity extends AppCompatActivity
             openFragment(new HomeFragment(), "Home");
         } else if (id == R.id.nav_story) {
             openFragment(new ContactFragment(), "Contact");
+        }
+        else if(id==R.id.nav_logout){
+            Intent in=new Intent(getBaseContext(), LoginActivity.class);
+            startActivity(in);
         }
 
         drawer.closeDrawer(GravityCompat.START);
